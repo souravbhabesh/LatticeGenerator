@@ -84,6 +84,8 @@ int main( int argc, char **argv )
    /*	Printing lattice configuration	*/
    /*	Total Particles		*/
    fprintf(lat,"%d\n",LEN);
+   printf("#particles %d\n",LEN);
+
    /*	Initial Paerticle Position in Flat configuration	*/
    for(int i=0;i<LEN;i++)
    {
@@ -91,10 +93,14 @@ int main( int argc, char **argv )
    }
    /*   Printing the Bond pairs */
    fprintf(lat,"%d\n",num_bonds);
+   printf("#Bonds %d\n",num_bonds);
    bonds(lat);
+
    /*   Printing the Dihedrals  */
    fprintf(lat,"%d\n",cnt_dihedrals);
+   printf("#dihedrals %d\n",cnt_dihedrals);
    out_dihedrals(lat);
+
    /*   Printing particle type Ids	*/
    out_typeId(lat);
 
