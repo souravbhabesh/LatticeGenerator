@@ -283,28 +283,19 @@ int out_dihedrals(FILE *fp)
 }
 
 /*	Particle Typeid		*/
-/*	Clamped - Group Id 2	*/
-/*	Otherwise - GroupId 1   */
+/*	Normal nodes - particle Id 0 */
+/*	Clamped left - particle Id  1	*/
+/*	Right end free to slide along X - - particle Id  3 */
+/*	Backbone of ribbon - particle Id 4 */
 
 int particle_typeid()
 {
    for(int i=0;i<LEN;i++)
    {
-//	if(i%NX==0)// || i%NX==NX-1)
-	//if(i==0 || i==1 || i==NX || i==LEN-1 || i==LEN-2 || i==LEN-NX-1)
-/*	if(i==0 || i==1 || i==NX || i==LEN-1 || i==LEN-2 || i==LEN-NX-1)
-		particle_id[i]=1;
-	else if(i==NX-1 || i==NX-2 || i==2*NX-1 || i==2*NX-2)
-		particle_id[i]=1;
-	else if(i==LEN-NX || i==LEN-NX+1 || i==LEN-2*NX || i==LEN-2*NX+1)
-                particle_id[i]=1;
-	else
-		particle_id[i]=0;
-*/
 	if(i%NX==0 || i%NX==1) //Clamping two columns of lattice sites on the left
 	{
 		particle_id[i]=1;
-		printf("particle_id[%d] = %d\n",i,particle_id[i]);
+		//printf("particle_id[%d] = %d\n",i,particle_id[i]);
 	}
 	else if (i%NX==NX-1 || i%NX==NX-2) //Two cols lattice sites on the right constrained to move only X
 	{
