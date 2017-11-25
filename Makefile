@@ -3,7 +3,7 @@ OBJS = $(SRC:.cpp=.o)
 DEPS = lattice_variables.h
 CXX = g++
 DEBUG = -g
-CXXFLAGS = -Wall -c $(DEBUG) -std=c++0x
+CXXFLAGS = -Wall -c $(DEBUG) -std=c++11 -mcmodel=medium
 LFLAGS = $(DEBUG) -O2 -Wall
 
 $LATINITIAL : $(OBJS)

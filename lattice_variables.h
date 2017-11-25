@@ -1,8 +1,5 @@
-//#define NX	101
-//#define NY	41
-//#define LEN	NX*NY
 #define a	1
-#define NMAX	20000
+#define NMAX	30000
 #define MAXDIHEDRALS	100000
 
 
