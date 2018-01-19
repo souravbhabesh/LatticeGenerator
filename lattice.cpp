@@ -156,7 +156,7 @@ int check_bond_mat()
 	{
 		if(bond_mat[i][j]!=bond_mat[j][i])
 		{
-			printf("At row = %d Col = %d\n",i,j);
+			//printf("At row = %d Col = %d\n",i,j);
 			print_and_exit("ERROR: Bond Matrix is not Symmetric\n");
 		}
 		if(bond_mat[i][j] == 1)
